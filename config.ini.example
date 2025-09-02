@@ -1,0 +1,11 @@
+[1A-INFRES]
+LOGIN_URL=https://webdfd.mines-ales.fr/php/planning-eleves/login/login.php
+URL=https://webdfd.mines-ales.fr/planning-eleves/index.php?url=ics/promo/75
+USERNAME=nom.prenom
+PASSWORD=motdepasse
+
+[2A-INFRES]
+LOGIN_URL=https://webdfd.mines-ales.fr/php/planning-eleves/login/login.php
+URL=https://webdfd.mines-ales.fr/planning-eleves/index.php?url=ics/promo/38
+USERNAME=nom.prenom
+PASSWORD=motdepasse

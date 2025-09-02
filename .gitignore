@@ -1,0 +1,6 @@
+Scripts/
+Lib/
+Include/
+__pycache__/
+
+config.ini
