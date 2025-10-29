@@ -4,7 +4,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - .:/app
+      - ./app_storage:/app/app_storage
     env_file:
       - .env
     environment:

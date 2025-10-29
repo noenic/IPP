@@ -1,0 +1,10 @@
+Scripts/
+Lib/
+Include/
+__pycache__/
+
+config.ini
+.env
+.dev/
+app_storage/
+venv/
