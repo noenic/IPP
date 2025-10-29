@@ -144,7 +144,7 @@ def download_all_sections_once():
         payload = {'Username': USERNAME, 'Password': PASSWORD, 'url': '', 'login': ''}
         response = session.post(LOGIN_URL, data=payload, timeout=15, allow_redirects=True)
         if "<!doctype html" in response.text.lower() and "connexion" in response.text.lower():
-            log.warning("Échec de la connexion ; cycle abandonné.")
+            log.warning("Échec de la connexion, page de connexion reçue.")
             return
         log.info("Connexion réussie ; téléchargement de %d sections.", len(SECTIONS))
         download_datetime_str = get_current_datetime_str()

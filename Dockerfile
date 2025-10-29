@@ -7,4 +7,4 @@ COPY main.py .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "main:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "main:app", "--access-logfile", "-", "--error-logfile", "-", "--log-level", "info"]
