@@ -16,11 +16,11 @@ load_dotenv()
 STORAGE_DIR = "app_storage"
 ICS_DIR = os.path.join(STORAGE_DIR, "ics")
 TOKENS_FILE = os.path.join(STORAGE_DIR, "tokens.json")
-DOWNLOAD_INTERVAL = 5 * 60  # 5 minutes
 BASE_URL = "https://webdfd.mines-ales.fr/planning-eleves/index.php?url=ics/"
 os.makedirs(ICS_DIR, exist_ok=True)
 
 # Charger les variables depuis .env
+DOWNLOAD_INTERVAL = int(os.getenv("DOWNLOAD_INTERVAL", 5 * 60)) # 5 minutes 
 LOGIN_URL = os.getenv("LOGIN_URL")
 USERNAME = os.getenv("WEB_USERNAME")
 PASSWORD = os.getenv("WEB_PASSWORD")
