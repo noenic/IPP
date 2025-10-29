@@ -5,6 +5,8 @@ services:
       - "5000:5000"
     volumes:
       - .:/app
+    env_file:
+      - .env
     environment:
       - FLASK_ENV=production
     restart: unless-stopped
