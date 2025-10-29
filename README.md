@@ -1,6 +1,7 @@
 # IPP — IMT Planning Proxy
 
 Petit proxy maison pour récupérer des fichiers ICS depuis webdbf (le site de planning de l'IMT d'Alès). Car il n'est pas possible de s'abonner directement aux ICS en dehors du réseau EMA.
+
 C'est un fork "à la va-vite" du projet de [BaptisteP31](https://github.com/BaptisteP31/IPP), avec quelques ajouts personnels :
 - Pas de requêtes en temps réel : on scrape toutes les ~5 minutes et on sert la dernière version disponible.
 - Horodatage des événements : on ajoute quand l'ICS a été récupéré et importé, pour savoir si c'est frais ou périmé.
@@ -65,7 +66,8 @@ Copiez `.env.example` → `.env` et remplissez :
 - SECTIONS : `NomSection:suffixe_url_ics,...` (ex: `2A-SR:eleve/12345,2A-DL:eleve/67890`)
 - FLASK_HOST / FLASK_PORT : par défaut `0.0.0.0:5000`.
 
-Pour récupérer le suffixe ICS : sur webdbf → Syncro → copier le champ "url".
+Pour récupérer le suffixe ICS : sur webdfd → Syncro → copier le champ "url".
+
 Par pitié, protégez bien ce fichier `.env` (ne le commitez pas et configurez les permissions, ou alors utilisez des variables d'environnement système).
 
 Pour les sections, reférez-vous à ce screenshot (ici , c'est promo/75) :
@@ -116,4 +118,4 @@ Licence MIT. Contributions bienvenues — issues et PR acceptées (je regarde qu
 - Respectez l'IMT : intervalle de scrap par défaut = 5 minutes pour ne pas les flooder.
 - Stockage des tokens en clair : pratique mais pas hyper sécurisé — améliorez si vous voulez.
 
-Je le répète : Faites attention avec vos identifiants webdbf, vous êtes responsables de leur sécurité, et s'ils fuient, c'est un enfer de les changer.
+Je le répète : Faites attention avec vos identifiants webdfd, vous êtes responsables de leur sécurité, et s'ils fuient, c'est un enfer de les changer.
