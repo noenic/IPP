@@ -60,7 +60,7 @@ GET /2A-SR?token=<token_genere>
 
 ## Configuration (.env)
 Copiez `.env.example` → `.env` et remplissez :
-- LOGIN_URL : URL de connexion webdbf (ne pas toucher sauf si IMT change).
+- LOGIN_URL : URL de connexion webdfd (ne pas toucher sauf si IMT change).
 - WEB_USERNAME / WEB_PASSWORD : vos identifiants webdbf (nom.prenom).
 - ADMIN_STATIC_TOKEN : token admin (gardez-le secret).
 - SECTIONS : `NomSection:suffixe_url_ics,...` (ex: `2A-SR:eleve/12345,2A-DL:eleve/67890`)
@@ -97,9 +97,9 @@ Configurez votre reverse proxy vers le port 5000.
 
 ## Dépendances
 Listées dans requirements.txt :
-- Flask==3.0.0
-- requests==2.31.0
-- python-dotenv==1.0.0
+- Flask==3.1.2
+- python-dotenv==1.2.1
+- requests==2.32.5
 
 Installer :
 ```bash
