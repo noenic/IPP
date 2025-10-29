@@ -79,6 +79,11 @@ Pour les sections, reférez-vous à ce screenshot (ici , c'est promo/75) :
 ## Déploiement (rapide)
 Recommandé : Docker + reverse proxy (Nginx / Traefik).
 
+Pull :
+```bash
+docker pull ghcr.io/noenic/ipp:latest
+```
+
 Build :
 ```bash
 docker build -t ipp .
@@ -100,6 +105,7 @@ Listées dans requirements.txt :
 - Flask==3.1.2
 - python-dotenv==1.2.1
 - requests==2.32.5
+- gunicorn==21.2.0
 
 Installer :
 ```bash
