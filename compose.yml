@@ -8,5 +8,6 @@ services:
     env_file:
       - .env
     environment:
+      - TZ=Europe/Paris
       - FLASK_ENV=production
     restart: unless-stopped
