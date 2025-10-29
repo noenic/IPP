@@ -75,9 +75,11 @@ def add_scrap_note_to_ics(content_bytes: bytes, download_datetime_str: str) -> b
     Retourne le contenu modifié.
     """
     try:
-        content_str = content_bytes.decode("utf-8", errors="ignore")
-    except Exception:
-        content_str = content_bytes.decode("latin-1", errors="ignore")
+        # décodage strict pour garder les accents, avec fallback Latin-1 si besoin
+        content_str = content_bytes.decode("utf-8")
+    except UnicodeDecodeError:
+        content_str = content_bytes.decode("latin-1")
+
     content_str = content_str.replace("\r\n", "\n").replace("\r", "\n")
     parts = content_str.split("BEGIN:VEVENT")
     if len(parts) <= 1:
@@ -101,7 +103,9 @@ def add_scrap_note_to_ics(content_bytes: bytes, download_datetime_str: str) -> b
             new_parts.append("BEGIN:VEVENT" + event_content + "END:VEVENT" + rest)
         else:
             new_parts.append("BEGIN:VEVENT" + event_block)
-    return "".join(new_parts).replace("\n", "\r\n").encode("utf-8", errors="ignore")
+
+    # encodage propre en UTF-8 (pas de suppression de caractères)
+    return "".join(new_parts).replace("\n", "\r\n").encode("utf-8")
 
 # ========== Download Logic ==========
 HEADERS = {
